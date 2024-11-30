@@ -13,6 +13,7 @@ body {
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;      /*allow rapping on smaller screen */
 }
 
 /* Left section */
@@ -23,6 +24,7 @@ body {
     width: 35%;
     text-align: center;
     border-right: 5px solid blue;
+    box-sizing: border-box;
 }
 
 .profile-picture {
@@ -37,6 +39,7 @@ body {
 .right-section {
     padding: 20px;
     width: 65%;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -75,4 +78,42 @@ button {
 
 button:hover {
     background-color: #ff737c;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column; /* Stack sections vertically */
+        width: 95%; /* Adjust width for smaller screens */
+    }
+
+    .left-section {
+        width: 100%; /* Full width */
+        border-right: none;
+        border-bottom: 5px solid blue; /* Add bottom border instead */
+    }
+
+    .right-section {
+        width: 100%; /* Full width */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
